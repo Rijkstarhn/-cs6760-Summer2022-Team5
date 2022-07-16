@@ -9,7 +9,7 @@ def main():
         task = utils.strip(task).upper()
         if task == 'E':
             text_encryption_algorithm = str(input(
-                'Which algorithm would you like to use to encrypt your message?\nCaesar (C)\nRailFence (R)\n (B)\n'))
+                'Which algorithm would you like to use to encrypt your message?\nCaesar (C)\nRailFence (R)\nBoth (B)\n'))
             text_encryption_algorithm = utils.strip(
                 text_encryption_algorithm).upper()
             if text_encryption_algorithm != "C" and text_encryption_algorithm != "R" and text_encryption_algorithm != "B":
