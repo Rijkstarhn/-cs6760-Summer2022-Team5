@@ -50,7 +50,7 @@ def main():
                       combined_encrypted)
 
             # step 2: img encryption
-            lsb_encrypted = encrypt.encryption(img, caesar_encrypted)
+            lsb_encrypted = encrypt.encryption(img, combined_encrypted)
             print("Your message is encrypted here: " + lsb_encrypted)
 
         elif task == 'D':
