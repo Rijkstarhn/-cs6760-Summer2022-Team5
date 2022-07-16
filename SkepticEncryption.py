@@ -9,7 +9,7 @@ def main():
         task = utils.strip(task).upper()
         if task == 'E':
             text_encryption_algorithm = str(input(
-                'Which algorithm would you like to use to encrypt your message?\nCaesar (C)\nRailFence (R)\nBoth (B)\n'))
+                'Which algorithm would you like to use to encrypt your message?\nCaesar (C)\nRailFence (R)\n (B)\n'))
             text_encryption_algorithm = utils.strip(
                 text_encryption_algorithm).upper()
             if text_encryption_algorithm != "C" and text_encryption_algorithm != "R" and text_encryption_algorithm != "B":
@@ -30,33 +30,31 @@ def main():
 
             # step 1: text encryption - Caesar Cipher algorithm
             if text_encryption_algorithm == "C":
-                caesar_encrypted = encrypt.text_encrypt_caesar_cipher(
+                encrypted = encrypt.text_encrypt_caesar_cipher(
                     plaintext, key)
-                print("Cipher text after caesar cipher encryption is: " +
-                      caesar_encrypted)
+                print("Cipher text after caesar cipher encryption is: " + encrypted)
 
             # step 1: text encryption - Rail Fence Cipher algorithm
             elif text_encryption_algorithm == "R":
-                rf_encrypted = encrypt.text_encrypt_railfence_cipher(
+                encrypted = encrypt.text_encrypt_railfence_cipher(
                     plaintext, key)
                 print(
-                    "Cipher text after rail fence cipher encryption is: " + rf_encrypted)
+                    "Cipher text after rail fence cipher encryption is: " + encrypted)
 
             # step 1: text encryption - Combined algorithm
             elif text_encryption_algorithm == "B":
-                combined_encrypted = encrypt.text_encrypt_combined(
+                encrypted = encrypt.text_encrypt_combined(
                     plaintext, key)
-                print("Encryped text from combined algorithems is: " +
-                      combined_encrypted)
+                print("Encryped text from combined algorithems is: " + encrypted)
 
             # step 2: img encryption
-            lsb_encrypted = encrypt.encryption(img, caesar_encrypted)
+            lsb_encrypted = encrypt.encryption(img, encrypted)
             print("Your message is encrypted here: " + lsb_encrypted)
 
         elif task == 'D':
             # get user input for message, key and img location
             text_encryption_algorithm = str(input(
-                'Which algorithm did you use to encrypt your message?\nCaesar(C)\nRailFence(R)\nBoth(B)'))
+                'Which algorithm did you use to encrypt your message?\nCaesar(C)\nRailFence(R)\nBoth(B)\n'))
             text_encryption_algorithm = utils.strip(
                 text_encryption_algorithm).upper()
             if text_encryption_algorithm != "C" and text_encryption_algorithm != "R" and text_encryption_algorithm != "B":
@@ -87,7 +85,7 @@ def main():
                 print("Original message is: " + combined_decrypted)
 
         else:
-            print("Invalid option. Bye!")
+            exit("Invalid option. Bye!")
 
     except Exception as ex:
         print('Error found', str(ex))

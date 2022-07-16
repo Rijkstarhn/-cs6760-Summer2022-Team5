@@ -64,21 +64,6 @@ def updateImagePixel(img, data):
             col += 1
 
 
-def strip(words):
-    '''
-    name: strip
-    parameter: string
-    return: input string but without all the punctuations and spaces
-    '''
-    # strip the punctuation out
-    for c in words:
-        if c in string.punctuation:
-            words = words.replace(c, '')
-
-    # strip the space out
-    return words.replace(' ', '')
-
-
 def encryption(img, text):
     # This function will encode the msg and hide it into the image.
     # Then generate an encrypted image called "encrypted_image.png".
