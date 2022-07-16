@@ -5,9 +5,6 @@ import string
 import utils
 
 
-# encode msg
-# to be done
-
 # encode img
 def processImage(pixels, data):
     # This function will convert the encoded message from ascii binary form into pixels
