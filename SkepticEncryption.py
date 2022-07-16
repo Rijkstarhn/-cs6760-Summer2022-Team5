@@ -49,6 +49,7 @@ def main():
 
             # step 2: img encryption
             lsb_encrypted = encrypt.encryption(img, encrypted)
+
             print("Your message is encrypted here: " + lsb_encrypted)
 
         elif task == 'D':
