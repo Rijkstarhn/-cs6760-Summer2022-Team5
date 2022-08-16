@@ -33,8 +33,10 @@ def processImage(pixels, data):
                 pixels[bit] -= 1
         bit = 8
         if pixels[bit] % 2 != 0:
-            pixels[bit] += 1
-            pixels[bit] %= 255
+            if pixels[bit] == 255:
+                pixels[bit] -= 1
+            else:
+                pixels[bit] += 1
         if idx == (lengthOfMsg-1):
             if pixels[-1] % 2 == 0:
                 if pixels[-1] == 0:
