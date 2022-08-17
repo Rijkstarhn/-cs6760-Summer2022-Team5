@@ -18,15 +18,15 @@ def main():
             plaintext = str(input('What is your message:\n'))
             key = int(input('What is the key? (Integer between 2-9)\n'))
             img = str(input(
-                'Choose an img from the following options:\nvancouver1.jpg (1)\nvancouver2.jpg (2)\nvancouver3.jpg (3)\nvancouver4.jpg (4)\n'))
+                'Choose an img from the following options:\nImage1.jpg (1)\nImage2.jpg (2)\nImage3.jpg (3)\nImage4.jpg (4)\n'))
             if img == "1":
                 img = "vancouver1.jpg"
             elif img == "2":
-                img = "vancouver2.jpg"
-            elif img == "3":
-                img = "vancouver3.jpg"
-            else:
                 img = "vancouver4.jpg"
+            elif img == "3":
+                img = "Silicon_Valley_Campus.jpg"
+            else:
+                img = "SFBA.jpg"
 
             # step 1: text encryption - Caesar Cipher algorithm
             if text_encryption_algorithm == "C":
@@ -87,7 +87,6 @@ def main():
 
         else:
             exit("Invalid option. Bye!")
-
     except Exception as ex:
         print('Error found', str(ex))
 
