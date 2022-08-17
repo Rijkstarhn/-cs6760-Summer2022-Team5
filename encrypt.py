@@ -26,15 +26,19 @@ def processImage(pixels, data):
         )[:3] + imageData.__next__()[:3] + imageData.__next__()[:3]]
         for bit in range(8):
             if (binaryFormMsg[idx][bit] == '1') and (pixels[bit] % 2 != 0):
+                # don't need to handle pixels[bit] == 0 as now pixels[bit] is not even number
                 pixels[bit] -= 1
             elif (binaryFormMsg[idx][bit] == '0') and (pixels[bit] % 2 == 0):
                 if pixels[bit] == 0:
                     pixels[bit] += 1
-                pixels[bit] -= 1
+                else:
+                    pixels[bit] -= 1
         bit = 8
         if pixels[bit] % 2 != 0:
-            pixels[bit] += 1
-            pixels[bit] %= 255
+            if pixels[bit] == 255:
+                pixels[bit] -= 1
+            else:
+                pixels[bit] += 1
         if idx == (lengthOfMsg-1):
             if pixels[-1] % 2 == 0:
                 if pixels[-1] == 0:
