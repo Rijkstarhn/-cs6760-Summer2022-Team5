@@ -20,13 +20,13 @@ def main():
             img = str(input(
                 'Choose an img from the following options:\nImage1.jpg (1)\nImage2.jpg (2)\nImage3.jpg (3)\nImage4.jpg (4)\n'))
             if img == "1":
-                img = "vancouver1.jpg"
+                img = "Image1_Vancouver.jpg"
             elif img == "2":
-                img = "vancouver4.jpg"
+                img = "Image2_Vancouver.jpg"
             elif img == "3":
-                img = "Silicon_Valley_Campus.jpg"
+                img = "Image3_Silicon_Valley_Campus.jpg"
             else:
-                img = "SFBA.jpg"
+                img = "Image4_SFBA.jpg"
 
             # step 1: text encryption - Caesar Cipher algorithm
             if text_encryption_algorithm == "C":
